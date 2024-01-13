@@ -76,22 +76,20 @@ from typing import Protocol
 
 class CommandPromptInterface(Protocol):
     ...
-class CommandPrompt():
+
+
+class CommandPrompt:
     def __init__(self, file_name: str):
         self.file_name = file_name
 
     def read_file(self):
         try:
-            with open(self.file_name,mode='r') as file:
+            with open(self.file_name, mode="r") as file:
                 for line in file.readline():
-                    print(line.replace('\n',''))
+                    print(line.replace("\n", ""))
         except FileNotFoundError:
             print(f'File with named "{self.file_name}" was not found!')
 
-
     def create_file(self):
-        with open(self.file_name, mode='x') as file:
+        with open(self.file_name, mode="x") as file:
             ...
-
-
-
