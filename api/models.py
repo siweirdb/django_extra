@@ -11,5 +11,5 @@ class Product(models.Model):
     description = models.TextField()
     quantity = models.IntegerField()
     category_id = models.ForeignKey(to=Category, on_delete=models.CASCADE)
-    is_active = models.BooleanField()
+    is_active = models.BooleanField(default=True)
 
